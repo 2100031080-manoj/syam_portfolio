@@ -10,7 +10,7 @@ body{
     background: #081b29;
 }
 .header{
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -21,6 +21,7 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    padding-right: 75px;
 }
 .logo{
     position: relative;
@@ -28,8 +29,8 @@ body{
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    /* margin-left: 35px;
-    transition: .3s; */
+    margin-left: 35px;
+    transition: .3s;
     cursor: default;
     opacity: 0;
     animation: slideRight 1s ease forwards;
@@ -49,21 +50,37 @@ body{
 .navbar a:hover{
     color: #0ef;
 }
-.home{
-    position: relative;
-    width: 100%;
-    justify-content: space-between;
-    height: 100vh;
-    background:url(./images/Home.png) no-repeat;
-    /* background:  #008080; */
-    background-size: cover;
-    background-position: center;
+.home {
     display: flex;
-    align-items: center;
-    padding: 70px 10% 0;
+    flex-direction: column;
+    margin: 0 auto;
+    max-height: 600px;
 }
-.home-content{
-    max-width: 600px;
+.home-content {
+    max-width: 585px;
+    margin-left: 50px;
+    margin-top: 6rem;
+    margin-right: 5rem;
+}
+.hm1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */ /* Aligns items at the start of the container vertically */
+    flex-direction: column; /* Arrange items in a column */
+    margin-top: 40px; /* Adjust the margin to position the image below the header */
+}
+.hm1 img{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    margin-top: 3.5rem;
+    border-radius: 50px;
+    box-shadow: 0 0 100px #0ef;
+}
+.home-content h2{
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 .home-content h3{
     font-size: 32px;
@@ -73,7 +90,7 @@ body{
     animation-delay: .7s;
 }
 .home-content h3:nth-last-of-type(2){
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     animation: slideTop 1s ease forwards;
     animation-delay: .7s;
 }
@@ -93,8 +110,9 @@ body{
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
+    margin-top: 10px;
 }
-.home-scl a{
+#home-scl a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -111,10 +129,10 @@ body{
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
     margin: 30px 15px 30px 0;
-    /* box-shadow: 0 0 5px #0ef,
-    0 0 25px #0ef; */
+    box-shadow: 0 0 5px #0ef,
+    0 0 25px #0ef;
 }
-.home-sci a:hover{
+#home-sci a:hover{
     background: #0ef;
     color: #081b29;
     box-shadow: 0 0 20px #0ef;
@@ -131,7 +149,7 @@ body{
     font-weight: 600;
     opacity: 0;
     animation: slideTop 1s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
     box-shadow: 0 0 5px #0ef,
     0 0 25px #0ef;
 }
@@ -140,25 +158,27 @@ body{
     0 0 25px cyan, 0 0 50px cyan,
     0 0 100px cyan, 0 0 200px cyan,;
 }
-
 .about{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 1.5rem;
+    row-gap: 0;
+    column-gap: 0;
+    margin-top: 4rem;
+    margin-bottom: 0;
 }
-.about-img img{
-    padding-bottom: 20%;
-    max-width: 630px;
-    height: auto;
-    width: 100%;
-    border-radius: 8px;
+.about-img1 img{
+    max-width: 450px;
+    border-radius: 360px;
+    margin-left:50px ;
+    box-shadow: 0 0 100px #0ef;
 }
-.about-text h2{
-    font-size: 60px;
+.about-text{
+    margin-right: 30px;
 }
 .about-text h2 span{
     color: #0ef;
+    margin: 0 auto;
 }
 .about-text h4{
     font-size: 29px;
@@ -171,18 +191,23 @@ body{
     color: aliceblue;
     font-size: 20px;
     line-height: 1.4;
-    margin-bottom: 4rem
+    margin-bottom: 3rem;
 }
+
 #services{
     color: aliceblue;
     font-size: 20px;
     line-height: 1.4;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
 }
 .sub-title{
     text-align: center;
     font-size: 60px;
-    padding-bottom: 70px;
+    padding-bottom: 30px;
 }
 .sub-title span{
     color: #0ef;
@@ -217,12 +242,13 @@ body{
     margin-bottom: 15px;
 }
 .services-list div a{
+    display: inline-block;
     text-decoration: none;
     color: #000000;
     font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
+    margin-top: 2rem;
 }
+
 .read{
     display: inline-block;
     padding: 12px 28px;
@@ -235,7 +261,7 @@ body{
     font-weight: 600;
     opacity: 0;
     animation: slideTop 1s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
     box-shadow: 0 0 5px #0ef,
     0 0 25px #0ef;
 }
@@ -295,10 +321,10 @@ section{
     transform: scaleX(0);
     transform-origin: left;
 }
-@keyframes animate{
+ @keyframes animate{
     100%{
         transform: scaleX(1);
-    }
+    } 
 }
 .Technical-bars .bar .progress-line span{
     height: 100%;
@@ -452,11 +478,13 @@ section{
 }
 .radial-bar .text{
     width: 100%;
-    position: absolute;
-    text-align: center;
+    position:absolute;
+    text-align:justify;
+    top: 120%;
     left: 50%;
+    right: 50%;
     bottom: -5px;
-    transform: translateX(-50px);
+    transform: translate(-50px,-50px);
     font-size: 17px;
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
@@ -464,7 +492,7 @@ section{
 } 
 .main-text{
     padding-top: 130px;
-    margin-top: 200px;
+    margin-top: 3rem;
 }
 .main-text h2{
     font-size: 60px;
@@ -476,9 +504,9 @@ section{
 }
 .portfolio-content{
     display: flex;
-    /* justify-content: center;
+     /* justify-content: center;
     align-items: center;
-    flex-wrap: wrap; */
+    flex-wrap: wrap;  */
     grid-template-columns: repeat(auto-fit, minmax(359px,auto));
 }
 .row{
@@ -501,8 +529,9 @@ section{
 }
 .layer{
     width: 100%;
+
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.1),#0ef);
+    background: linear-gradient(rgba(0,0,0,0.7),#0ef);
     position: absolute;
     border-radius: 8px;
     left: 0;
@@ -526,6 +555,7 @@ section{
     color: #000;
     font-size: 1rem;
     line-height: 1.8;
+    font-weight: 600;
 }
 .layer i{
     color: #ff004f;
@@ -551,12 +581,12 @@ section{
     align-items: center;
     gap: 3rem;
     padding-left: 30px;
-    margin-top: 130px;
+    margin-top: 4rem;
 }
 .contact-text h2{
     font-size: 90px;
     line-height: 1;
-    text-align: center;
+ /*    text-align: center; */
 }
 .contact-text h2 span{
     color: #0ef;
@@ -674,11 +704,6 @@ section{
     padding: 10px;
     border-radius: 0.5rem;
 }
-
-
-
-
-
 @keyframes slideRight{
     0% { 
         transform: translateX(-100px);
@@ -721,4 +746,4 @@ section{
         transform: translateY(0px);
         opacity: 1;
     }
-}
+}  
