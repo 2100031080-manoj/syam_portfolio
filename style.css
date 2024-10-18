@@ -704,7 +704,7 @@ section{
     padding: 10px;
     border-radius: 0.5rem;
 }
-@keyframes slideRight{
+ @keyframes slideRight{
     0% { 
         transform: translateX(-100px);
         opacity: 0;
@@ -745,5 +745,6 @@ section{
     100% {
         transform: translateY(0px);
         opacity: 1;
-    }
-}  
+    } 
+} 
+ 
